@@ -1,0 +1,6 @@
+[package]
+name = "oxide-gb"
+version = "0.1.0"
+authors = ["Erik Swanson <theerikswanson@gmail.com>"]
+
+[dependencies]
