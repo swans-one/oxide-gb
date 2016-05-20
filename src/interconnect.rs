@@ -7,6 +7,13 @@ pub struct Interconnect {
     ram: Box<[u8; ADDR_SPACE_SIZE]>,
 }
 
+impl Interconnect {
+    pub fn new() -> Interconnect {
+        Interconnect::default()
+    }
+}
+
+
 impl Default for Interconnect {
     fn default() -> Interconnect {
         Interconnect {

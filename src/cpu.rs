@@ -1,6 +1,6 @@
 use super::interconnect;
 
-#[derive(Default, Debug)]
+#[derive(Debug)]
 pub struct Cpu {
     registers: CpuRegisters,
     interconnect: interconnect::Interconnect,
@@ -24,8 +24,11 @@ struct CpuRegisters {
 }
 
 impl Cpu {
-    pub fn new() -> Cpu {
-        Cpu::default()
+    pub fn new(interconnect: interconnect::Interconnect) -> Cpu {
+        Cpu {
+            registers: CpuRegisters::default(),
+            interconnect: interconnect,
+        }
     }
 
     // TODO: Different interface
