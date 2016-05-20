@@ -1,5 +1,6 @@
 use super::cpu;
 
+#[derive(Debug)]
 pub struct Gb {
     cpu: cpu::Cpu,
 }

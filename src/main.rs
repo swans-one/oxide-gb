@@ -3,8 +3,9 @@ use std::fs;
 use std::io::Read;
 use std::path::Path;
 
-mod gb;
 mod cpu;
+mod gb;
+mod interconnect;
 
 fn main() {
     let rom_file_name = env::args().nth(1).unwrap();
@@ -14,8 +15,8 @@ fn main() {
     let mut gb = gb::Gb::new();
     gb.run();
 
-    // println!("{:?}", rom_bytes[1]);
-    // println!("{:#?}", cpu)
+    println!("{:?}", rom_bytes[1]);
+    println!("{:#?}", gb)
 }
 
 fn load_bin<P: AsRef<Path>>(path: P) -> Vec<u8> {
