@@ -19,4 +19,9 @@ impl Cpu {
     pub fn new() -> Cpu {
         Cpu::default()
     }
+
+    // TODO: Different interface
+    pub fn run(&mut self) {
+
+    }
 }

@@ -3,6 +3,7 @@ use std::fs;
 use std::io::Read;
 use std::path::Path;
 
+mod gb;
 mod cpu;
 
 fn main() {
@@ -10,10 +11,11 @@ fn main() {
 
     let rom_bytes = load_bin(rom_file_name);
 
-    let cpu = cpu::Cpu::new();
+    let mut gb = gb::Gb::new();
+    gb.run();
 
-    println!("{:?}", rom_bytes[1]);
-    println!("{:#?}", cpu)
+    // println!("{:?}", rom_bytes[1]);
+    // println!("{:#?}", cpu)
 }
 
 fn load_bin<P: AsRef<Path>>(path: P) -> Vec<u8> {
