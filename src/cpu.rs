@@ -2,7 +2,7 @@ use super::interconnect;
 
 #[derive(Debug)]
 pub struct Cpu {
-    registers: CpuRegisters,
+    register: CpuRegisters,
     interconnect: interconnect::Interconnect,
 }
 
@@ -26,13 +26,14 @@ struct CpuRegisters {
 impl Cpu {
     pub fn new(interconnect: interconnect::Interconnect) -> Cpu {
         Cpu {
-            registers: CpuRegisters::default(),
+            register: CpuRegisters::default(),
             interconnect: interconnect,
         }
     }
 
     // TODO: Different interface
     pub fn run(&mut self) {
-
+        let pc = self.register.pc;
+        self.interconnect.read_word(pc);
     }
 }
