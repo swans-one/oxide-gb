@@ -13,10 +13,12 @@ fn main() {
     let rom_bytes = load_bin(rom_file_name);
 
     let mut gb = gb::Gb::new();
+    gb.load_cartridge(rom_bytes);
     gb.power_on_reset();
     gb.run();
 
-    println!("{:?}", rom_bytes[1]);
+    // We moved this for now, may make a copy later
+    // println!("{:?}", rom_bytes[1]);
     println!("{:#?}", gb)
 }
 

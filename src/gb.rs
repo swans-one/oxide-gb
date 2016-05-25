@@ -19,5 +19,10 @@ impl Gb {
 
     pub fn power_on_reset(&mut self) {
         self.cpu.power_on_reset();
+
+    }
+
+    pub fn load_cartridge(&mut self, rom: Vec<u8>) {
+        self.cpu.load_cartridge(rom);
     }
 }

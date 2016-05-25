@@ -40,4 +40,8 @@ impl Cpu {
     pub fn power_on_reset(&mut self) {
         self.register.pc = 0x100;
     }
+
+    pub fn load_cartridge(&mut self, rom: Vec<u8>) {
+        self.interconnect.load_cartridge(rom);
+    }
 }

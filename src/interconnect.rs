@@ -4,6 +4,7 @@ const ADDR_SPACE_SIZE: usize = 16 * 1024;
 
 pub struct Interconnect {
     // TODO: name this address space?
+    cartridge: Vec<u8>,
     ram: Box<[u8; ADDR_SPACE_SIZE]>,
 }
 
@@ -22,13 +23,17 @@ impl Interconnect {
             panic!("Unable to read from address {:#x}", addr)
         }
     }
-}
 
+    pub fn load_cartridge(&mut self, rom: Vec<u8>) {
+        self.cartridge = rom;
+    }
+}
 
 impl Default for Interconnect {
     fn default() -> Interconnect {
         Interconnect {
-            ram: Box::new([0; ADDR_SPACE_SIZE])
+            cartridge: Vec::new(),
+            ram: Box::new([0; ADDR_SPACE_SIZE]),
         }
     }
 }
