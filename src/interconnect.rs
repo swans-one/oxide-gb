@@ -40,6 +40,6 @@ impl Default for Interconnect {
 
 impl fmt::Debug for Interconnect {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "ram...")
+        write!(f, "cart: {:#x}... ram: {:#x}...", self.cartridge[0], self.ram[0])
     }
 }
