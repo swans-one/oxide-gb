@@ -1,6 +1,6 @@
 use std::fmt;
 
-const ADDR_SPACE_SIZE: usize = 16 * 1024;
+const ADDR_SPACE_SIZE: usize = 64 * 1024;
 
 pub struct Interconnect {
     // TODO: name this address space?
