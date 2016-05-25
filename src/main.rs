@@ -13,6 +13,7 @@ fn main() {
     let rom_bytes = load_bin(rom_file_name);
 
     let mut gb = gb::Gb::new();
+    gb.power_on_reset();
     gb.run();
 
     println!("{:?}", rom_bytes[1]);

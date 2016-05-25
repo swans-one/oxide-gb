@@ -16,4 +16,8 @@ impl Gb {
     pub fn run(&mut self) {
         self.cpu.run();
     }
+
+    pub fn power_on_reset(&mut self) {
+        self.cpu.power_on_reset();
+    }
 }

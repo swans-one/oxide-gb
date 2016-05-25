@@ -36,4 +36,8 @@ impl Cpu {
         let pc = self.register.pc;
         self.interconnect.read_word(pc);
     }
+
+    pub fn power_on_reset(&mut self) {
+        self.register.pc = 0x100;
+    }
 }
